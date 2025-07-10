@@ -42,37 +42,28 @@ export default function CertificateLibrary() {
   };
 
   return (
-    <div id="certificates" className="py-12 bg-[#0b0b0b] text-white text-center section">
+    <div className="py-12 bg-[#0b0b0b] text-white text-center">
       <h2 className="text-4xl font-bold mb-10">🗂️ My Certificates</h2>
       <div className="container relative flex items-center justify-center">
         <button
           onClick={handlePrev}
-          className="glass-button absolute left-8 z-20"
-          aria-label="Previous Certificate"
+          className="glass-button absolute left-4 z-10"
         >
-          <ChevronLeftIcon className="h-12 w-12 text-white" />
+          <ChevronLeftIcon className="h-10 w-10 text-white" />
         </button>
-        <div className="flex flex-row gap-6 overflow-x-auto scroll-smooth">
-          {certificates.map((certificate, index) => (
-            <div
-              key={certificate.id}
-              className={`certificate-glass-frame ${index === currentIndex ? "active" : "hidden"}`}
-            >
-              <img
-                src={certificate.image}
-                alt={certificate.title}
-                className="certificate-image"
-              />
-              <p className="certificate-title">{certificate.title}</p>
-            </div>
-          ))}
+        <div className="certificate-glass-frame">
+          <img
+            src={certificates[currentIndex].image}
+            alt={certificates[currentIndex].title}
+            className="certificate-image"
+          />
+          <p className="certificate-title">{certificates[currentIndex].title}</p>
         </div>
         <button
           onClick={handleNext}
-          className="glass-button absolute right-8 z-20"
-          aria-label="Next Certificate"
+          className="glass-button absolute right-4 z-10"
         >
-          <ChevronRightIcon className="h-12 w-12 text-white" />
+          <ChevronRightIcon className="h-10 w-10 text-white" />
         </button>
       </div>
     </div>

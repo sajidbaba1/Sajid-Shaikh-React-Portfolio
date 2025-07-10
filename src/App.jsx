@@ -1,24 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import CertificateLibrary from "./components/CertificateLibrary";
+import HeroSection from "./components/Hero";
 import ProjectSlider from "./components/ProjectSlider";
-import ResumeSection from "./components/ResumeSection";
+import CertificateLibrary from "./components/CertificateLibrary";
 import SkillsShowcase from "./components/SkillsShowcase";
-import useScrollFade from "./components/ScrollFade";
-import "./index.css";
+import ResumeSection from "./components/ResumeSection";
+import useScrollFade from "./components/useScrollFade.js";
 
-export default function App() {
-  useScrollFade();
+function App() {
+  useEffect(() => {
+    useScrollFade();
+  }, []);
 
   return (
-    <div id="root">
+    <>
       <Navbar />
-      <div className="section"><Hero /></div>
-      <div className="section"><CertificateLibrary /></div>
-      <div className="section"><ProjectSlider /></div>
-      <div className="section"><ResumeSection /></div>
-      <div className="section"><SkillsShowcase /></div>
-    </div>
+      <div id="hero" className="section">
+        <HeroSection />
+      </div>
+      <div id="projects" className="section">
+        <ProjectSlider />
+      </div>
+      <div id="certificates" className="section">
+        <CertificateLibrary />
+      </div>
+      <div id="skills" className="section">
+        <SkillsShowcase />
+      </div>
+      <div id="resume" className="section">
+        <ResumeSection />
+      </div>
+    </>
   );
 }
+
+export default App;

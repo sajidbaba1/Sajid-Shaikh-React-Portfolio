@@ -46,9 +46,9 @@ const skills = [
 
 export default function SkillsShowcase() {
   return (
-    <div id="skills" className="py-16 bg-[#090909] text-white text-center section">
+    <div className="py-16 bg-[#090909] text-white text-center">
       <h2 className="text-4xl font-bold mb-12">🧠 My Skills</h2>
-      <div className="container flex flex-row justify-center gap-6 overflow-x-auto">
+      <div className="container grid grid-cols-4 gap-8">
         {skills.map((skill, index) => (
           <div key={index} className="glass-skill-card">
             <img src={skill.icon} alt={skill.name} className="skill-icon" />

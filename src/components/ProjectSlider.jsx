@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./ProjectSlider.css";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 
 const projects = [
   {
@@ -29,13 +28,10 @@ const projects = [
 
 export default function ProjectSlider() {
   const [activeIndex, setActiveIndex] = useState(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePlay = (index) => {
     setActiveIndex(index);
     const audio = document.getElementById(`audio-${index}`);
-    const homeAudio = document.getElementById("home-bgm");
-    if (homeAudio) homeAudio.pause(); // Pause home background music
     if (audio) {
       audio.currentTime = 0;
       audio.play();
@@ -44,68 +40,40 @@ export default function ProjectSlider() {
 
   const handleClose = () => {
     const audio = document.getElementById(`audio-${activeIndex}`);
-    const homeAudio = document.getElementById("home-bgm");
     if (audio) audio.pause();
-    if (homeAudio) homeAudio.play(); // Resume home background music
     setActiveIndex(null);
   };
 
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
-    handleClose();
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % projects.length);
-    handleClose();
-  };
-
   return (
-    <div id="projects" className="relative py-12 bg-[#0b0b0b] text-white section">
+    <div className="relative py-12 bg-[#0b0b0b] text-white">
       <h2 className="text-center text-4xl font-bold mb-10">My Projects</h2>
-      <div className="container relative flex items-center justify-center">
-        <button
-          onClick={handlePrev}
-          className="glass-button absolute left-4 z-20"
-          aria-label="Previous Project"
-        >
-          <ChevronLeftIcon className="h-10 w-10 text-white" />
-        </button>
-        <div className="flex gap-8 overflow-hidden">
-          {projects.map((proj, index) => (
-            <div
-              key={proj.id}
-              className={`project-card cursor-pointer ${index === currentIndex ? 'active' : 'hidden'}`}
-              onClick={() => handlePlay(index)}
-            >
-              <video
-                src={proj.video}
-                className="project-video"
-                muted
-              />
-              <audio id={`audio-${index}`} src={proj.music} loop />
-              <div className="project-title">{proj.title}</div>
-            </div>
-          ))}
-        </div>
-        <button
-          onClick={handleNext}
-          className="glass-button absolute right-4 z-20"
-          aria-label="Next Project"
-        >
-          <ChevronRightIcon className="h-10 w-10 text-white" />
-        </button>
+      <div className="container flex gap-8 justify-center flex-wrap">
+        {projects.map((proj, index) => (
+          <div
+            key={proj.id}
+            className="project-card cursor-pointer"
+            onClick={() => handlePlay(index)}
+          >
+            <video
+              src={proj.video}
+              className="project-video"
+              muted
+            />
+            <audio id={`audio-${index}`} src={proj.music} loop />
+            <div className="project-title">{proj.title}</div>
+          </div>
+        ))}
       </div>
       <AnimatePresence>
         {activeIndex !== null && (
           <motion.div
             className="fullscreen-modal"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.4 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            style={{ backgroundColor: projects[activeIndex].bgColor }}
           >
-            <div className="modal-content glass-border">
+            <div className="modal-content">
               <video
                 src={projects[activeIndex].video}
                 autoPlay
@@ -115,7 +83,6 @@ export default function ProjectSlider() {
               <button
                 onClick={handleClose}
                 className="close-button absolute top-4 right-6 text-white text-2xl"
-                aria-label="Close Project Modal"
               >
                 ✖
               </button>

@@ -25,27 +25,27 @@ export default function Hero() {
     return () => clearTimeout(timer);
   }, [index]);
 
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.volume = 0.3; // Lower volume (30%)
-    }
-  }, []);
-
   const toggleAudio = () => {
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.volume = 0.2; // Set low volume
+        audioRef.current.play().catch((error) => {
+          console.warn("Audio playback failed:", error);
+        });
+      }
+      setIsPlaying(!isPlaying);
     }
-    setIsPlaying(!isPlaying);
   };
 
   return (
-    <div id="home" className="hero-container section">
+    <div className="hero-container">
       <video autoPlay muted loop playsInline className="hero-video">
         <source src="/src/assets/jungle-loop.mp4" type="video/mp4" />
         Your browser does not support HTML5 video.
       </video>
+      <audio ref={audioRef} src="/src/assets/music1.mp3" loop />
       <div className="hero-content">
         <img
           src="/src/assets/profile.jpg"
@@ -67,12 +67,10 @@ export default function Hero() {
         </div>
         <button
           onClick={toggleAudio}
-          className="glass-button absolute bottom-4 right-4 p-2 rounded-full text-white hover:scale-110 transition"
-          aria-label={isPlaying ? "Pause Background Music" : "Play Background Music"}
+          className="mt-4 px-4 py-2 bg-white/10 backdrop-blur-md text-white rounded-full hover:bg-white/20 transition"
         >
-          {isPlaying ? "🔇 Pause Music" : "🔊 Play Music"}
+          {isPlaying ? "Pause Music" : "Play Music"}
         </button>
-        <audio id="home-bgm" ref={audioRef} src="/src/assets/music1.mp3" loop />
       </div>
     </div>
   );

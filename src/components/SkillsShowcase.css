@@ -11,23 +11,20 @@
   align-items: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
-  width: 150px; /* Fixed width for side-by-side layout */
-  min-width: 150px; /* Prevent shrinking */
 }
 
 .glass-skill-card:hover {
   transform: scale(1.05);
-  background: rgba(255, 255, 255, 0.1);
 }
 
 .skill-icon {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   margin-bottom: 1rem;
 }
 
 .skill-name {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: white;
   margin-bottom: 0.75rem;
@@ -39,30 +36,24 @@
 }
 
 .skill-star {
-  font-size: 1rem;
-}
-
-.container {
-  padding: 0 1rem;
+  font-size: 1.25rem;
 }
 
 @media (max-width: 768px) {
   .glass-skill-card {
-    width: 120px;
-    min-width: 120px;
     padding: 1rem;
   }
 
   .skill-icon {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
   }
 
   .skill-name {
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
 
   .skill-star {
-    font-size: 0.875rem;
+    font-size: 1rem;
   }
 }
