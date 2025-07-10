@@ -1,10 +1,84 @@
-/* src/components/Hero.css */
-.hero-video-bg {
+/* Hero.css: Custom styles for the Hero component */
+
+/* Ensure the container is full-width and responsive */
+.hero-container {
+  position: relative;
+  width: 100%;
+  min-height: 80vh; /* Taller for desktop */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .hero-container {
+    min-height: 90vh; /* Full height for larger screens */
+  }
+}
+
+/* Video background styling */
+.hero-video {
   position: absolute;
   top: 0;
   left: 0;
-  object-fit: cover;
-  z-index: -1;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  z-index: -10;
+}
+
+/* Dark overlay for text readability */
+.hero-video::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Slightly darker for desktop */
+  z-index: -5;
+}
+
+/* Profile image styling */
+.hero-profile-img {
+  width: 12rem; /* Larger for desktop */
+  height: 12rem;
+  border-radius: 50%;
+  border: 4px solid white;
+  transition: all 0.5s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero-profile-img:hover {
+  filter: brightness(125%);
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .hero-profile-img {
+    width: 8rem; /* Smaller for mobile */
+    height: 8rem;
+  }
+}
+
+/* Text content styling */
+.hero-text {
+  margin-top: 2rem;
+  color: white;
+  font-weight: 700;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  font-size: clamp(2rem, 5vw, 3.5rem); /* Larger for desktop */
+}
+
+@media (max-width: 768px) {
+  .hero-text {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+}
+
+/* Center content */
+.hero-content {
+  text-align: center;
+  padding: 1.5rem;
 }

@@ -1,7 +1,6 @@
-// src/components/Hero.jsx
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import "./Hero.css"; // Create this for video background styling
+import "./Hero.css";
 
 const titles = [
   "I am a Software Developer",
@@ -20,26 +19,23 @@ export default function Hero() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIndex((prevIndex) => (prevIndex + 1) % titles.length);
-    }, 2000); // change every 2 seconds
+    }, 2000);
     return () => clearTimeout(timer);
   }, [index]);
 
   return (
-    <div className="relative h-[90vh] w-full overflow-hidden flex items-center justify-center">
-      {/* Background video */}
-      <video autoPlay muted loop className="absolute top-0 left-0 w-full h-full object-cover -z-10">
+    <div className="hero-container">
+      <video autoPlay muted loop playsInline className="hero-video">
         <source src="/src/assets/jungle-loop.mp4" type="video/mp4" />
         Your browser does not support HTML5 video.
       </video>
-
-      {/* Content */}
-      <div className="text-center">
+      <div className="hero-content">
         <img
           src="/src/assets/profile.jpg"
           alt="Profile"
-          className="mx-auto w-40 h-40 rounded-full border-4 border-white hover:brightness-125 transition duration-500 shadow-lg"
+          className="hero-profile-img"
         />
-        <div className="mt-6 text-white text-3xl md:text-4xl font-bold">
+        <div className="hero-text">
           <AnimatePresence mode="wait">
             <motion.div
               key={index}

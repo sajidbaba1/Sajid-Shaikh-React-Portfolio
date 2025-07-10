@@ -1,4 +1,3 @@
-// src/components/ProjectSlider.jsx
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./ProjectSlider.css";
@@ -46,27 +45,25 @@ export default function ProjectSlider() {
   };
 
   return (
-    <div className="relative py-10 bg-black bg-opacity-80 text-white">
-      <h2 className="text-center text-4xl font-bold mb-8">My Projects</h2>
-
-      <div className="flex gap-6 justify-center flex-wrap px-6">
+    <div className="relative py-12 bg-[#0b0b0b] text-white">
+      <h2 className="text-center text-4xl font-bold mb-10">My Projects</h2>
+      <div className="container flex gap-8 justify-center flex-wrap">
         {projects.map((proj, index) => (
           <div
             key={proj.id}
-            className="relative w-60 h-36 overflow-hidden rounded-xl shadow-lg cursor-pointer border border-white/20 backdrop-blur-sm bg-glass"
+            className="project-card cursor-pointer"
             onClick={() => handlePlay(index)}
           >
             <video
               src={proj.video}
-              className="w-full h-full object-cover opacity-70 hover:opacity-100 transition"
+              className="project-video"
               muted
             />
             <audio id={`audio-${index}`} src={proj.music} loop />
-            <div className="absolute bottom-2 left-2 text-sm font-semibold">{proj.title}</div>
+            <div className="project-title">{proj.title}</div>
           </div>
         ))}
       </div>
-
       <AnimatePresence>
         {activeIndex !== null && (
           <motion.div
@@ -74,9 +71,7 @@ export default function ProjectSlider() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            style={{
-              backgroundColor: projects[activeIndex].bgColor
-            }}
+            style={{ backgroundColor: projects[activeIndex].bgColor }}
           >
             <div className="modal-content">
               <video
@@ -87,7 +82,7 @@ export default function ProjectSlider() {
               />
               <button
                 onClick={handleClose}
-                className="absolute top-4 right-6 text-white text-2xl bg-glass p-2 rounded-full hover:scale-110 transition"
+                className="close-button absolute top-4 right-6 text-white text-2xl"
               >
                 ✖
               </button>

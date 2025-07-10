@@ -1,4 +1,3 @@
-// src/components/CertificateLibrary.jsx
 import React, { useState } from "react";
 import "./CertificateLibrary.css";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
@@ -43,34 +42,28 @@ export default function CertificateLibrary() {
   };
 
   return (
-    <div className="py-12 bg-[#0b0b0b] text-white text-center relative">
+    <div className="py-12 bg-[#0b0b0b] text-white text-center">
       <h2 className="text-4xl font-bold mb-10">🗂️ My Certificates</h2>
-
-      <div className="relative w-full max-w-4xl mx-auto flex items-center justify-center">
-        {/* Left Arrow */}
+      <div className="container relative flex items-center justify-center">
         <button
           onClick={handlePrev}
-          className="glass-button absolute left-0 p-2 z-10 hover:scale-110 transition"
+          className="glass-button absolute left-4 z-10"
         >
-          <ChevronLeftIcon className="h-8 w-8 text-white" />
+          <ChevronLeftIcon className="h-10 w-10 text-white" />
         </button>
-
-        {/* Certificate Frame */}
-        <div className="certificate-glass-frame p-4 rounded-xl shadow-md w-[300px] md:w-[450px] h-[320px] md:h-[400px] flex flex-col justify-center items-center">
+        <div className="certificate-glass-frame">
           <img
             src={certificates[currentIndex].image}
             alt={certificates[currentIndex].title}
-            className="object-contain rounded-lg shadow-md max-h-full transition duration-500 hover:scale-105"
+            className="certificate-image"
           />
-          <p className="mt-4 font-semibold text-lg">{certificates[currentIndex].title}</p>
+          <p className="certificate-title">{certificates[currentIndex].title}</p>
         </div>
-
-        {/* Right Arrow */}
         <button
           onClick={handleNext}
-          className="glass-button absolute right-0 p-2 z-10 hover:scale-110 transition"
+          className="glass-button absolute right-4 z-10"
         >
-          <ChevronRightIcon className="h-8 w-8 text-white" />
+          <ChevronRightIcon className="h-10 w-10 text-white" />
         </button>
       </div>
     </div>

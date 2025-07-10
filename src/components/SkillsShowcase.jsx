@@ -1,4 +1,3 @@
-// src/components/SkillsShowcase.jsx
 import React from "react";
 import "./SkillsShowcase.css";
 
@@ -49,18 +48,16 @@ export default function SkillsShowcase() {
   return (
     <div className="py-16 bg-[#090909] text-white text-center">
       <h2 className="text-4xl font-bold mb-12">🧠 My Skills</h2>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+      <div className="container grid grid-cols-4 gap-8">
         {skills.map((skill, index) => (
-          <div key={index} className="glass-skill-card p-5 rounded-xl flex flex-col items-center shadow-md hover:scale-105 transition duration-300">
-            <img src={skill.icon} alt={skill.name} className="w-16 h-16 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">{skill.name}</h3>
-            <div className="flex gap-1">
+          <div key={index} className="glass-skill-card">
+            <img src={skill.icon} alt={skill.name} className="skill-icon" />
+            <h3 className="skill-name">{skill.name}</h3>
+            <div className="skill-stars">
               {[...Array(5)].map((_, i) => (
                 <span
                   key={i}
-                  className={`text-yellow-400 text-lg ${
-                    i < skill.level ? "opacity-100" : "opacity-30"
-                  }`}
+                  className={`skill-star ${i < skill.level ? "opacity-100 text-yellow-400" : "opacity-30"}`}
                 >
                   ★
                 </span>

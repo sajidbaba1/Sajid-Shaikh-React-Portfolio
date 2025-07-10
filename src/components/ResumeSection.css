@@ -1,6 +1,56 @@
-/* src/components/ResumeSection.css */
+/* ResumeSection.css: Custom styles for the ResumeSection component */
+
 .resume-glass-card {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 800px; /* Wider for desktop */
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.resume-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.resume-text {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+}
+
+.resume-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(to right, #4f46e5, #7c3aed);
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.resume-button:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .resume-glass-card {
+    max-width: 500px;
+    padding: 1.5rem;
+  }
+
+  .resume-title {
+    font-size: 2rem;
+  }
+
+  .resume-text {
+    font-size: 1rem;
+  }
 }
