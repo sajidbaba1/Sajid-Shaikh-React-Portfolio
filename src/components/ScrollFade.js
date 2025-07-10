@@ -1,26 +1,26 @@
-/* ScrollFade.js: Utility to add fade-in effect for sections on scroll */
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll(".section");
 
-import { useEffect } from "react";
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.1, // Trigger when 10% of the section is visible
+  };
 
-export default function useScrollFade() {
-  useEffect(() => {
-    const sections = document.querySelectorAll(".section");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade-in");
+        entry.target.classList.remove("fade-out");
+      } else {
+        entry.target.classList.remove("fade-in");
+        entry.target.classList.add("fade-out");
+      }
+    });
+  }, observerOptions);
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("fade-in");
-          }
-        });
-      },
-      { threshold: 0.2 } // Trigger when 20% of section is visible
-    );
-
-    sections.forEach((section) => observer.observe(section));
-
-    return () => {
-      sections.forEach((section) => observer.unobserve(section));
-    };
-  }, []);
-}
+  sections.forEach((section) => {
+    section.classList.add("fade-out"); // Start hidden
+    observer.observe(section);
+  });
+});

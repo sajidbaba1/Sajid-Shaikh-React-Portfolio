@@ -45,62 +45,26 @@ const skills = [
 ];
 
 export default function SkillsShowcase() {
-  const halfway = Math.ceil(skills.length / 2);
-  const leftSkills = skills.slice(0, halfway);
-  const rightSkills = skills.slice(halfway);
-
   return (
-    <div id="skills" className="py-16 bg-[#090909] text-white text-center">
+    <div id="skills" className="py-16 bg-[#090909] text-white text-center section">
       <h2 className="text-4xl font-bold mb-12">🧠 My Skills</h2>
-      <div className="container flex justify-center gap-8">
-        <table className="glass-skill-table">
-          <tbody>
-            {leftSkills.map((skill, index) => (
-              <tr key={index} className="glass-skill-card">
-                <td className="p-4">
-                  <img src={skill.icon} alt={skill.name} className="skill-icon" />
-                </td>
-                <td className="p-4 text-left">
-                  <h3 className="skill-name">{skill.name}</h3>
-                  <div className="skill-stars">
-                    {[...Array(5)].map((_, i) => (
-                      <span
-                        key={i}
-                        className={`skill-star ${i < skill.level ? "opacity-100 text-yellow-400" : "opacity-30"}`}
-                      >
-                        ★
-                      </span>
-                    ))}
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <table className="glass-skill-table">
-          <tbody>
-            {rightSkills.map((skill, index) => (
-              <tr key={index} className="glass-skill-card">
-                <td className="p-4">
-                  <img src={skill.icon} alt={skill.name} className="skill-icon" />
-                </td>
-                <td className="p-4 text-left">
-                  <h3 className="skill-name">{skill.name}</h3>
-                  <div className="skill-stars">
-                    {[...Array(5)].map((_, i) => (
-                      <span
-                        key={i}
-                        className={`skill-star ${i < skill.level ? "opacity-100 text-yellow-400" : "opacity-30"}`}
-                      >
-                        ★
-                      </span>
-                    ))}
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="container flex flex-row justify-center gap-6 overflow-x-auto">
+        {skills.map((skill, index) => (
+          <div key={index} className="glass-skill-card">
+            <img src={skill.icon} alt={skill.name} className="skill-icon" />
+            <h3 className="skill-name">{skill.name}</h3>
+            <div className="skill-stars">
+              {[...Array(5)].map((_, i) => (
+                <span
+                  key={i}
+                  className={`skill-star ${i < skill.level ? "opacity-100 text-yellow-400" : "opacity-30"}`}
+                >
+                  ★
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="navbar-logo">Portfolio</div>
+        <div className="navbar-logo">Sajid Shaikh Portfolio</div>
         <ul className="navbar-links">
           <li><a href="#home" className="navbar-link">Home</a></li>
           <li><a href="#certificates" className="navbar-link">Certificates</a></li>

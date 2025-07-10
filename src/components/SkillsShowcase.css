@@ -1,33 +1,36 @@
 /* SkillsShowcase.css: Custom styles for the SkillsShowcase component */
 
-.glass-skill-table {
+.glass-skill-card {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  width: 100%;
-  max-width: 400px;
-}
-
-.glass-skill-card {
   transition: all 0.3s ease;
+  width: 150px; /* Fixed width for side-by-side layout */
+  min-width: 150px; /* Prevent shrinking */
 }
 
 .glass-skill-card:hover {
+  transform: scale(1.05);
   background: rgba(255, 255, 255, 0.1);
-  transform: scale(1.02);
 }
 
 .skill-icon {
   width: 60px;
   height: 60px;
+  margin-bottom: 1rem;
 }
 
 .skill-name {
   font-size: 1.25rem;
   font-weight: 600;
   color: white;
+  margin-bottom: 0.75rem;
 }
 
 .skill-stars {
@@ -39,10 +42,15 @@
   font-size: 1rem;
 }
 
+.container {
+  padding: 0 1rem;
+}
+
 @media (max-width: 768px) {
-  .glass-skill-table {
-    max-width: 100%;
-    margin-bottom: 1rem;
+  .glass-skill-card {
+    width: 120px;
+    min-width: 120px;
+    padding: 1rem;
   }
 
   .skill-icon {

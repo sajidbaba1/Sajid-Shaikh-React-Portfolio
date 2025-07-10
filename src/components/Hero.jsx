@@ -25,6 +25,12 @@ export default function Hero() {
     return () => clearTimeout(timer);
   }, [index]);
 
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = 0.3; // Lower volume (30%)
+    }
+  }, []);
+
   const toggleAudio = () => {
     if (isPlaying) {
       audioRef.current.pause();
@@ -35,7 +41,7 @@ export default function Hero() {
   };
 
   return (
-    <div id="home" className="hero-container">
+    <div id="home" className="hero-container section">
       <video autoPlay muted loop playsInline className="hero-video">
         <source src="/src/assets/jungle-loop.mp4" type="video/mp4" />
         Your browser does not support HTML5 video.
@@ -62,10 +68,11 @@ export default function Hero() {
         <button
           onClick={toggleAudio}
           className="glass-button absolute bottom-4 right-4 p-2 rounded-full text-white hover:scale-110 transition"
+          aria-label={isPlaying ? "Pause Background Music" : "Play Background Music"}
         >
           {isPlaying ? "🔇 Pause Music" : "🔊 Play Music"}
         </button>
-        <audio ref={audioRef} src="/src/assets/music1.mp3" loop />
+        <audio id="home-bgm" ref={audioRef} src="/src/assets/music1.mp3" loop />
       </div>
     </div>
   );

@@ -1,14 +1,15 @@
 /* Navbar.css: Custom styles for the Navbar component */
 
 .navbar {
-  background: rgba(11, 11, 11, 0.9);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(11, 11, 11, 0.85); /* Slightly more transparent for glass effect */
+  backdrop-filter: blur(12px); /* Stronger blur for glassmorphism */
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Thicker, more visible border */
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 50;
+  z-index: 60; /* Below project modal but above other content */
   padding: 1rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-container {
@@ -21,9 +22,9 @@
 }
 
 .navbar-logo {
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: 700;
-  color: white;
+  color: #a5b4fc;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
 }
@@ -35,15 +36,16 @@
 
 .navbar-links {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .navbar-link {
   color: white;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   position: relative;
   transition: all 0.3s ease;
+  padding: 0.5rem 0;
 }
 
 .navbar-link:hover {
@@ -54,7 +56,7 @@
 .navbar-link::after {
   content: '';
   position: absolute;
-  bottom: -4px;
+  bottom: 0;
   left: 0;
   width: 0;
   height: 2px;
@@ -76,10 +78,11 @@
   }
 
   .navbar-links {
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   .navbar-link {
     font-size: 1rem;
+    padding: 0.3rem 0;
   }
 }

@@ -4,13 +4,13 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 50;
+  z-index: 100; /* Higher z-index to prevent overlap */
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.7); /* Semi-transparent to show background */
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .modal-content {
@@ -29,7 +29,7 @@
 }
 
 .project-card {
-  width: 400px; /* Larger for desktop */
+  width: 400px;
   height: 250px;
   overflow: hidden;
   border-radius: 1rem;
