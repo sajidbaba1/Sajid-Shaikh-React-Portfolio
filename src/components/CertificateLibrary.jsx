@@ -7,28 +7,38 @@ const certificates = [
   {
     id: 1,
     image: "/src/assets/certificate1.jpg",
-    title: "React Developer",
+    title: "Java 8 Programming",
+    institute: "DurgaSoft",
+    date: "Completed"
   },
   {
     id: 2,
     image: "/src/assets/certificate2.jpg",
-    title: "WordPress Expert",
+    title: "Full Stack Web Development - Delta Batch",
+    institute: "Apna College",
+    date: "Completed"
   },
   {
     id: 3,
     image: "/src/assets/certificate3.jpg",
-    title: "DSA & Problem Solving",
+    title: "SQL Foundation Course",
+    institute: "Not Specified",
+    date: "Completed"
   },
   {
     id: 4,
     image: "/src/assets/certificate4.jpg",
-    title: "UI/UX Design",
+    title: "Godrej FinTech Data Analytics",
+    institute: "Godrej Infotech",
+    date: "15 Nov 2024 - 02 Jan 2025"
   },
   {
     id: 5,
     image: "/src/assets/certificate5.jpg",
-    title: "DevOps Engineer",
-  },
+    title: "Web Design for Beginners",
+    institute: "WebDev Academy",
+    date: "03 Apr 2025 - 25 Apr 2025"
+  }
 ];
 
 export default function CertificateLibrary() {
@@ -45,7 +55,7 @@ export default function CertificateLibrary() {
   const variants = {
     enter: { x: 100, opacity: 0 },
     center: { x: 0, opacity: 1 },
-    exit: { x: -100, opacity: 0 },
+    exit: { x: -100, opacity: 0 }
   };
 
   return (
@@ -75,6 +85,8 @@ export default function CertificateLibrary() {
             className="certificate-image"
           />
           <p className="certificate-title">{certificates[currentIndex].title}</p>
+          <p className="certificate-institute text-sm text-gray-300">{certificates[currentIndex].institute}</p>
+          <p className="certificate-date text-sm text-gray-300">{certificates[currentIndex].date}</p>
         </motion.div>
         <motion.button
           onClick={handleNext}

@@ -5,6 +5,7 @@ import ProjectSlider from "./components/ProjectSlider";
 import CertificateLibrary from "./components/CertificateLibrary";
 import SkillsShowcase from "./components/SkillsShowcase";
 import ResumeSection from "./components/ResumeSection";
+import Footer from "./components/Footer";
 import useScrollFade from "./components/useScrollFade.js";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       <div id="resume" className="section">
         <ResumeSection />
       </div>
+      <Footer />
     </>
   );
 }
