@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Hero.css";
 
@@ -15,6 +15,8 @@ const titles = [
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -23,8 +25,17 @@ export default function Hero() {
     return () => clearTimeout(timer);
   }, [index]);
 
+  const toggleAudio = () => {
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
   return (
-    <div className="hero-container">
+    <div id="home" className="hero-container">
       <video autoPlay muted loop playsInline className="hero-video">
         <source src="/src/assets/jungle-loop.mp4" type="video/mp4" />
         Your browser does not support HTML5 video.
@@ -48,6 +59,13 @@ export default function Hero() {
             </motion.div>
           </AnimatePresence>
         </div>
+        <button
+          onClick={toggleAudio}
+          className="glass-button absolute bottom-4 right-4 p-2 rounded-full text-white hover:scale-110 transition"
+        >
+          {isPlaying ? "🔇 Pause Music" : "🔊 Play Music"}
+        </button>
+        <audio ref={audioRef} src="/src/assets/music1.mp3" loop />
       </div>
     </div>
   );

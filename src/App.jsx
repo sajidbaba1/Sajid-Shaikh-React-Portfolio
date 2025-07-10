@@ -1,23 +1,24 @@
+import React from "react";
 import Navbar from "./components/Navbar";
-import HeroSection from "./components/Hero";
-import ProjectSlider from "./components/ProjectSlider";
+import Hero from "./components/Hero";
 import CertificateLibrary from "./components/CertificateLibrary";
-import SkillsShowcase from "./components/SkillsShowcase";
+import ProjectSlider from "./components/ProjectSlider";
 import ResumeSection from "./components/ResumeSection";
+import SkillsShowcase from "./components/SkillsShowcase";
+import useScrollFade from "./components/ScrollFade";
+import "./index.css";
 
+export default function App() {
+  useScrollFade();
 
-function App() {
   return (
-    <>
+    <div id="root">
       <Navbar />
-      <HeroSection />
-      <ProjectSlider />
-      <CertificateLibrary />
-      <SkillsShowcase />
-      <ResumeSection />
-  
-    </>
+      <div className="section"><Hero /></div>
+      <div className="section"><CertificateLibrary /></div>
+      <div className="section"><ProjectSlider /></div>
+      <div className="section"><ResumeSection /></div>
+      <div className="section"><SkillsShowcase /></div>
+    </div>
   );
 }
-
-export default App;

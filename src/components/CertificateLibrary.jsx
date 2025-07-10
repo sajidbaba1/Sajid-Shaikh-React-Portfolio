@@ -42,7 +42,7 @@ export default function CertificateLibrary() {
   };
 
   return (
-    <div className="py-12 bg-[#0b0b0b] text-white text-center">
+    <div id="certificates" className="py-12 bg-[#0b0b0b] text-white text-center">
       <h2 className="text-4xl font-bold mb-10">🗂️ My Certificates</h2>
       <div className="container relative flex items-center justify-center">
         <button
