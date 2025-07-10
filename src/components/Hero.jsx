@@ -30,7 +30,7 @@ export default function Hero() {
       if (isPlaying) {
         audioRef.current.pause();
       } else {
-        audioRef.current.volume = 0.2; // Set low volume
+        audioRef.current.volume = 0.2;
         audioRef.current.play().catch((error) => {
           console.warn("Audio playback failed:", error);
         });
@@ -62,7 +62,7 @@ export default function Hero() {
         <motion.img
           src="/src/assets/profile.jpg"
           alt="Profile"
-          className="hero-profile-img"
+          className="hero-profile-img mx-auto"
           variants={profileVariants}
           animate="animate"
         />
