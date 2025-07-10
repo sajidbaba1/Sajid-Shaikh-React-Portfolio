@@ -20,9 +20,9 @@ export default function Navbar() {
   };
 
   const linkVariants = {
+    initial: { scale: 1 },
     hover: {
       scale: 1.1,
-      color: "#4f46e5",
       transition: { duration: 0.3 },
     },
   };
@@ -41,13 +41,21 @@ export default function Navbar() {
               <motion.li
                 key={item.name}
                 variants={linkVariants}
+                initial="initial"
                 whileHover="hover"
+                className="relative"
               >
                 <a
                   href={item.href}
                   className="text-white text-lg font-semibold hover:text-indigo-500 transition-colors"
                 >
                   {item.name}
+                  <motion.span
+                    className="absolute left-0 bottom-0 w-full h-0.5 bg-indigo-500"
+                    initial={{ scaleX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
                 </a>
               </motion.li>
             ))}

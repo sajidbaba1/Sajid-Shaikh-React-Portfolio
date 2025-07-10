@@ -1,5 +1,3 @@
-/* SkillsShowcase.css: Custom styles for the SkillsShowcase component */
-
 .glass-skill-card {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
@@ -55,5 +53,11 @@
 
   .skill-star {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
   }
 }

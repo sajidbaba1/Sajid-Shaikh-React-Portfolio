@@ -39,6 +39,18 @@ export default function Hero() {
     }
   };
 
+  const profileVariants = {
+    animate: {
+      scale: [1, 1.05, 1],
+      boxShadow: [
+        "0 4px 20px rgba(0, 0, 0, 0.4)",
+        "0 6px 30px rgba(0, 0, 0, 0.6)",
+        "0 4px 20px rgba(0, 0, 0, 0.4)"
+      ],
+      transition: { duration: 2, repeat: Infinity, ease: "easeInOut" }
+    }
+  };
+
   return (
     <div className="hero-container">
       <video autoPlay muted loop playsInline className="hero-video">
@@ -47,10 +59,12 @@ export default function Hero() {
       </video>
       <audio ref={audioRef} src="/src/assets/music1.mp3" loop />
       <div className="hero-content">
-        <img
+        <motion.img
           src="/src/assets/profile.jpg"
           alt="Profile"
           className="hero-profile-img"
+          variants={profileVariants}
+          animate="animate"
         />
         <div className="hero-text">
           <AnimatePresence mode="wait">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./ProjectSlider.css";
 
@@ -28,6 +28,7 @@ const projects = [
 
 export default function ProjectSlider() {
   const [activeIndex, setActiveIndex] = useState(null);
+  const videoRef = useRef(null);
 
   const handlePlay = (index) => {
     setActiveIndex(index);
@@ -36,11 +37,19 @@ export default function ProjectSlider() {
       audio.currentTime = 0;
       audio.play();
     }
+    if (videoRef.current) {
+      videoRef.current.requestFullscreen().catch((error) => {
+        console.warn("Fullscreen request failed:", error);
+      });
+    }
   };
 
   const handleClose = () => {
     const audio = document.getElementById(`audio-${activeIndex}`);
     if (audio) audio.pause();
+    if (videoRef.current && document.fullscreenElement) {
+      document.exitFullscreen();
+    }
     setActiveIndex(null);
   };
 
@@ -49,10 +58,12 @@ export default function ProjectSlider() {
       <h2 className="text-center text-4xl font-bold mb-10">My Projects</h2>
       <div className="container flex gap-8 justify-center flex-wrap">
         {projects.map((proj, index) => (
-          <div
+          <motion.div
             key={proj.id}
             className="project-card cursor-pointer"
             onClick={() => handlePlay(index)}
+            whileHover={{ scale: 1.05, boxShadow: "0 6px 20px rgba(0, 0, 0, 0.4)" }}
+            transition={{ duration: 0.3 }}
           >
             <video
               src={proj.video}
@@ -61,31 +72,38 @@ export default function ProjectSlider() {
             />
             <audio id={`audio-${index}`} src={proj.music} loop />
             <div className="project-title">{proj.title}</div>
-          </div>
+          </motion.div>
         ))}
       </div>
       <AnimatePresence>
         {activeIndex !== null && (
           <motion.div
             className="fullscreen-modal"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
             style={{ backgroundColor: projects[activeIndex].bgColor }}
           >
             <div className="modal-content">
-              <video
+              <motion.video
+                ref={videoRef}
                 src={projects[activeIndex].video}
                 autoPlay
                 controls
                 className="w-full h-auto rounded-2xl shadow-lg"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
               />
-              <button
+              <motion.button
                 onClick={handleClose}
                 className="close-button absolute top-4 right-6 text-white text-2xl"
+                whileHover={{ scale: 1.2, rotate: 90 }}
+                transition={{ duration: 0.3 }}
               >
                 ✖
-              </button>
+              </motion.button>
             </div>
           </motion.div>
         )}
