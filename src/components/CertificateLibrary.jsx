@@ -6,49 +6,49 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 const certificates = [
   {
     id: 1,
-    image: "/public/assets/certificate1.jpg",
+    image: "/assets/certificate1.jpg",
     title: "Java 8 Programming",
     institute: "DurgaSoft",
     date: "Completed"
   },
   {
     id: 2,
-    image: "/public/assets/certificate2.jpg",
+    image: "/assets/certificate2.jpg",
     title: "Full Stack Web Development - Delta Batch",
     institute: "Apna College",
     date: "Completed"
   },
   {
     id: 3,
-    image: "/public/assets/certificate3.jpg",
+    image: "/assets/certificate3.jpg",
     title: "SQL Foundation Course",
     institute: "LinkedIn Learning",
     date: "Completed"
   },
   {
     id: 4,
-    image: "/public/assets/certificate4.jpg",
+    image: "/assets/certificate4.jpg",
     title: "Godrej FinTech Data Analytics",
     institute: "Godrej Infotech",
     date: "15 Nov 2024 - 02 Jan 2025"
   },
   {
     id: 5,
-    image: "/public/assets/certificate5.jpg",
+    image: "/assets/certificate5.jpg",
     title: "Web Design for Beginners",
     institute: "WebDev Academy",
     date: "03 Apr 2025 - 25 Apr 2025"
   },
   {
     id: 6,
-    image: "/public/assets/certificate6.jpg",
+    image: "/assets/certificate6.jpg",
     title: "Java Development Internship",
     institute: "Octanet Services PVT LTD",
     date: "03 Apr 2025 - 25 Apr 2025"
   },
   {
     id: 7,
-    image: "/public/assets/certificate7.jpg",
+    image: "/assets/certificate7.jpg",
     title: "Java Development Internship",
     institute: "CodeIt Solutions",
     date: "03 Apr 2025 - 25 Apr 2025"
