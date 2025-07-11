@@ -57,7 +57,7 @@ export default function Hero() {
         <source src="assets/jungle-loop.mp4" type="video/mp4" />
         Your browser does not support HTML5 video.
       </video>
-      <audio ref={audioRef} src="/public/assets/music1.mp3" loop />
+      <audio ref={audioRef} src="/assets/music1.mp3" loop />
       <div className="hero-content">
         <motion.img
           src="assets/profile.jpg"

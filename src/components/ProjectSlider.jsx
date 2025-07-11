@@ -25,9 +25,9 @@ const projects = [
     id: 3,
     title: "Online Bookstore",
     description: "A full-stack application with user registration, book catalog browsing, and purchase functionality, developed with Java, Spring Boot, MySQL, and REST APIs.",
-    video: "/public/assets/project3.mp4",
+    video: "/assets/project3.mp4",
     bgColor: "#aaaaff",
-    music: "/public/assets/music3.mp3"
+    music: "/assets/music3.mp3"
   }
 ];
 
