@@ -7,27 +7,27 @@ const projects = [
     id: 1,
     title: "B2B Multivendor Web Application",
     description: "A full-stack B2B e-commerce platform with vendor management, product listings, and secure transactions using Java, Spring Boot, MySQL, and REST APIs.",
-    image: "/src/assets/certificate1.jpg",
+    image: "/public/assets/certificate1.jpg",
     bgColor: "#ffaaaa",
-    music: "/src/assets/music1.mp3",
+    music: "/public/assets/music1.mp3",
     github: "https://github.com/sajibbabu/B2B-Ecommerce-Multivendor-Web-Application"
   },
   {
     id: 2,
     title: "Student Management System",
     description: "A web application for managing student records with CRUD operations, built using Java, Spring Boot, MySQL, CSS, HTML, and Bootstrap.",
-    video: "/src/assets/project2.mp4",
+    video: "/public/assets/project2.mp4",
     bgColor: "#aaffaa",
-    music: "/src/assets/music2.mp3",
+    music: "/public/assets/music2.mp3",
     github: "https://github.com/sajibbabu/Student-Management-system-plus"
   },
   {
     id: 3,
     title: "Online Bookstore",
     description: "A full-stack application with user registration, book catalog browsing, and purchase functionality, developed with Java, Spring Boot, MySQL, and REST APIs.",
-    video: "/src/assets/project3.mp4",
+    video: "/public/assets/project3.mp4",
     bgColor: "#aaaaff",
-    music: "/src/assets/music3.mp3"
+    music: "/public/assets/music3.mp3"
   }
 ];
 
