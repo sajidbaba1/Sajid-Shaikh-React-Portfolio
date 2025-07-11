@@ -7,7 +7,7 @@ const titles = [
   "I am a WordPress Developer",
   "I am a UI/UX Designer",
   "I am a Mobile App Developer",
-  "I am a DSA Freak",
+  "I am a DSA Enthusiast",
   "I am an AI Agent Developer",
   "I am a DevOps Engineer",
   "I am a Full Stack Developer",
