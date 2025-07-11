@@ -4,42 +4,42 @@ import "./SkillsShowcase.css";
 const skills = [
   {
     name: "Java",
-    icon: "/public/assets/icons/java.png",
+    icon: "/assets/icons/java.png",
     level: 5,
   },
   {
     name: "Spring Boot",
-    icon: "/public/assets/icons/spring.png",
+    icon: "/assets/icons/spring.png",
     level: 4,
   },
   {
     name: "React",
-    icon: "/public/assets/icons/react.png",
+    icon: "/assets/icons/react.png",
     level: 5,
   },
   {
     name: "Tailwind CSS",
-    icon: "/public/assets/icons/tailwind.png",
+    icon: "/assets/icons/tailwind.png",
     level: 4,
   },
   {
     name: "JavaScript",
-    icon: "/public/assets/icons/javascript.png",
+    icon: "/assets/icons/javascript.png",
     level: 5,
   },
   {
     name: "MySQL",
-    icon: "/public/assets/icons/mysql.png",
+    icon: "/assets/icons/mysql.png",
     level: 4,
   },
   {
     name: "WordPress",
-    icon: "/public/assets/icons/wordpress.png",
+    icon: "/assets/icons/wordpress.png",
     level: 3,
   },
   {
     name: "Figma",
-    icon: "/public/assets/icons/figma.png",
+    icon: "/assets/icons/figma.png",
     level: 4,
   },
 ];

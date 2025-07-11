@@ -54,13 +54,13 @@ export default function Hero() {
   return (
     <div className="hero-container">
       <video autoPlay muted loop playsInline className="hero-video">
-        <source src="/public/assets/jungle-loop.mp4" type="video/mp4" />
+        <source src="assets/jungle-loop.mp4" type="video/mp4" />
         Your browser does not support HTML5 video.
       </video>
       <audio ref={audioRef} src="/public/assets/music1.mp3" loop />
       <div className="hero-content">
         <motion.img
-          src="/public/assets/profile.jpg"
+          src="assets/profile.jpg"
           alt="Profile"
           className="hero-profile-img mx-auto"
           variants={profileVariants}

@@ -55,35 +55,35 @@ const certificates = [
   },
   {
     id: 8,
-    image: "/public/assets/certificate8.jpg",
+    image: "/assets/certificate8.jpg",
     title: "Java Certification Course",
     institute: "KG Coding",
     date: "03 Aug 2025 - 25 Sept 2024"
   },
   {
     id: 9,
-    image: "/public/assets/certificate9.jpg",
+    image: "/assets/certificate9.jpg",
     title: "JavaScript Certification Course",
     institute: "KG Coding",
     date: "28 Aug 2025 - 22 Sept 2025"
   },
   {
     id: 10,
-    image: "/public/assets/certificate10.jpg",
+    image: "/assets/certificate10.jpg",
     title: "Accenture iAspire Program",
     institute: "Accenture",
     date: "28 Nov 2024 - 20 Jan 2025"
   },
   {
     id: 11,
-    image: "/public/assets/certificate11.jpg",
+    image: "/assets/certificate11.jpg",
     title: "Git and GitHub for Devops Engineeers",
     institute: "Valaxy Technologies",
     date: "28 May 2025 - 07 June 2025"
   },
   {
     id: 12,
-    image: "/public/assets/certificate12.jpg",
+    image: "/assets/certificate12.jpg",
     title: "Vibe Coding from Scratch",
     institute: "Federico Garay",
     date: "02 May 2025 - 06 June 2025"

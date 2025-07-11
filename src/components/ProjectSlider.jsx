@@ -9,16 +9,16 @@ const projects = [
     description: "A full-stack B2B e-commerce platform with vendor management, product listings, and secure transactions using Java, Spring Boot, MySQL, and REST APIs.",
     image: "/public/assets/certificate1.jpg",
     bgColor: "#ffaaaa",
-    music: "/public/assets/music1.mp3",
+    music: "/assets/music1.mp3",
     github: "https://github.com/sajibbabu/B2B-Ecommerce-Multivendor-Web-Application"
   },
   {
     id: 2,
     title: "Student Management System",
     description: "A web application for managing student records with CRUD operations, built using Java, Spring Boot, MySQL, CSS, HTML, and Bootstrap.",
-    video: "/public/assets/project2.mp4",
+    video: "/assets/project2.mp4",
     bgColor: "#aaffaa",
-    music: "/public/assets/music2.mp3",
+    music: "/assets/music2.mp3",
     github: "https://github.com/sajibbabu/Student-Management-system-plus"
   },
   {
