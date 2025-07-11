@@ -7,7 +7,7 @@ const projects = [
     id: 1,
     title: "B2B Multivendor Web Application",
     description: "A full-stack B2B e-commerce platform with vendor management, product listings, and secure transactions using Java, Spring Boot, MySQL, and REST APIs.",
-    video: "/src/assets/project1.mp4",
+    image: "/src/assets/certificate1.jpg",
     bgColor: "#ffaaaa",
     music: "/src/assets/music1.mp3",
     github: "https://github.com/sajibbabu/B2B-Ecommerce-Multivendor-Web-Application"

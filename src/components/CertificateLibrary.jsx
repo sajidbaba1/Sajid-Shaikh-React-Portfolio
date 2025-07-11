@@ -22,7 +22,7 @@ const certificates = [
     id: 3,
     image: "/src/assets/certificate3.jpg",
     title: "SQL Foundation Course",
-    institute: "Not Specified",
+    institute: "LinkedIn Learning",
     date: "Completed"
   },
   {
@@ -38,6 +38,55 @@ const certificates = [
     title: "Web Design for Beginners",
     institute: "WebDev Academy",
     date: "03 Apr 2025 - 25 Apr 2025"
+  },
+  {
+    id: 6,
+    image: "/src/assets/certificate6.jpg",
+    title: "Java Development Internship",
+    institute: "Octanet Services PVT LTD",
+    date: "03 Apr 2025 - 25 Apr 2025"
+  },
+  {
+    id: 7,
+    image: "/src/assets/certificate7.jpg",
+    title: "Java Development Internship",
+    institute: "CodeIt Solutions",
+    date: "03 Apr 2025 - 25 Apr 2025"
+  },
+  {
+    id: 8,
+    image: "/src/assets/certificate8.jpg",
+    title: "Java Certification Course",
+    institute: "KG Coding",
+    date: "03 Aug 2025 - 25 Sept 2024"
+  },
+  {
+    id: 9,
+    image: "/src/assets/certificate9.jpg",
+    title: "JavaScript Certification Course",
+    institute: "KG Coding",
+    date: "28 Aug 2025 - 22 Sept 2025"
+  },
+  {
+    id: 10,
+    image: "/src/assets/certificate10.jpg",
+    title: "Accenture iAspire Program",
+    institute: "Accenture",
+    date: "28 Nov 2024 - 20 Jan 2025"
+  },
+  {
+    id: 11,
+    image: "/src/assets/certificate11.jpg",
+    title: "Git and GitHub for Devops Engineeers",
+    institute: "Valaxy Technologies",
+    date: "28 May 2025 - 07 June 2025"
+  },
+  {
+    id: 12,
+    image: "/src/assets/certificate12.jpg",
+    title: "Vibe Coding from Scratch",
+    institute: "Federico Garay",
+    date: "02 May 2025 - 06 June 2025"
   }
 ];
 
