@@ -10,7 +10,11 @@ const titles = [
   "I am a DSA Freak",
   "I am an AI Agent Developer",
   "I am a DevOps Engineer",
-  "I am a Full Stack Developer"
+  "I am a Full Stack Developer",
+  "I am a Graphics Designer",
+  "I am a Frontend Developer",
+  "I am a QA Engineer",
+  "I am a Data Analyst"
 ];
 
 export default function Hero() {
